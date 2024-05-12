@@ -1,0 +1,120 @@
+.main{
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 100px 0 0 0;
+    background-color: #B7B9C0;
+    margin: 0 auto;
+}
+
+.body{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    display: block;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    
+    &__title{
+        margin-top: 90px;
+        margin-bottom: 20px;
+        color: #223F47;
+        font-family: 'Roboto', italic;
+        font-weight: 600;
+        font-size: 60px;
+    }
+    
+    &__text{
+        margin-top: 15px;
+        padding-bottom: 30px;
+        padding-top: 20px;
+        color: #223F47;
+        font-family: 'Roboto', italic;
+        font-size: 40px;
+    }
+}
+
+.about{
+    
+    display: block;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+
+    &__rectangle{
+        position: relative;
+        width: 600px;
+        height: 200px;
+        background-color: #102B32;
+        border-radius: 13px;
+        margin-left: 300px;
+        margin-top: 130px;
+
+    }
+    &__rectangle::after{
+        content: 'Делитесь своими идеями  на странице заметок';
+        position: absolute;
+        border-radius: 13px;
+        top: 40px;
+        left: 70px;
+        width: 590px;
+        height: 200px;
+        background-color: #D9D9D9;
+        color: #223F47;
+        font-family: 'Roboto', italic;
+        font-size: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-wrap: break-word;
+    }
+    
+    &__rectangle1{
+        position: relative;
+        width: 600px;
+        height: 200px;
+        background-color: #102B32;
+        border-radius: 13px;
+        margin-left: auto;
+        margin-right: 250px;
+        margin-top: 130px;
+        margin-bottom: 200px;
+    }
+    &__rectangle1::after{
+        content: 'Оставляйте комментарии к заметкам других людей';
+        position: absolute;
+        border-radius: 13px;
+        top: 40px;
+        left: -70px;
+        width: 600px;
+        height: 200px;
+        background-color: #D9D9D9;
+        color: #223F47;
+        font-family: 'Roboto', italic;
+        font-size: 40px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        word-wrap: break-word;
+    }
+
+    &__text{
+        margin-top: 15px;
+        padding-bottom: 30px;
+        padding-top: 20px;
+        color: #223F47;
+        font-family: 'Roboto', italic;
+        font-size: 40px;
+        margin-bottom: 80px;
+    }
+}
+
+.footer{
+    background-color: #223F47;
+    height: 250px;
+}
