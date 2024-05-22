@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<div class="page-header__container">
-    <link rel="stylesheet" href="styles/styles.min.css">
-    <nav class="page-header__nav">
-        <a href="feed.html" class="page-header__nav-link feed">Feed</a>
-        <a href="#" class="page-header__nav-link reglog">Выйти</a>
-    </nav>
-</div>
-<!--тут тоже пока не знаю как тело заметки реализовать-->
-<label class="comment__field">
-    <span class="field__label field__label--textarea">Comment</span>
-    <textarea class="field__textarea" name="comment"></textarea>
-</label>
+<body class="body">
+    <div class="page-header__container">
+        <link rel="stylesheet" href="styles/styles.min.css">
+        <nav class="page-header__nav">
+            <a href="feed.html" class="page-header__nav-link feed">Feed</a>
+            <a href="index.html" class="page-header__nav-link logout">Выйти</a>
+        </nav>
+    </div>
+    <div class="comment">
+        <div class="note-description">
+            <h2 class="note-title">Имя киборга: </h2>
+            <p class="note-head">Head</p>
+            <p class="note-eye">Eye</p>
+            <p class="note-body">Body</p>
+            <p class="note-arm">Arm</p>
+            <p class="note-leg">Leg</p>
+        </div>
+        <label class="comment__field">
+            <span class="field__spam">Comment:</span>
+            <textarea class="field__textarea" name="comment"></textarea>
+            <button type="button" class="comment__sent">Отправить</button>
+        </label>
+    </div>
+</body>
+
 </html>

@@ -1,0 +1,50 @@
+.body{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0 0 0;
+    background-color: #B7B9C0;
+    margin: 0 auto;
+
+    .feed{
+        display: block;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+
+        &__title{
+            justify-content: center;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 30px;
+            color: #223F47;
+            font-family: 'Roboto', italic;
+            font-size: 60px;
+        }
+    }
+
+    .abomination{
+        counter-reset: link-counter;
+
+        &__container{
+        display: block;
+        color: #223F47;
+        font-family: 'Roboto', italic;
+        font-size: 30px;
+        margin-left: 50px;
+        font-weight: 600;
+
+        &::before {
+            counter-increment: link-counter; 
+            content: " " counter(link-counter) ". ";
+          }
+    }
+}
+}
+
