@@ -16,9 +16,11 @@
     justify-content: center;
     text-align: center;
     position: relative;
+    margin-top: 100px;
     
     &__title{
         margin-top: 90px;
+        padding-top: 50px;
         margin-bottom: 20px;
         color: #223F47;
         font-family: 'Roboto', italic;
@@ -38,10 +40,11 @@
 
 .about{
     
-    display: block;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: center;
-    position: relative;
+    min-height: calc(100vh - 300px); 
     background-color: #B7B9C0;
 
     &__rectangle{
@@ -105,12 +108,12 @@
 
     &__text{
         margin-top: 15px;
-        margin-bottom: 30px;
+        margin-bottom: 60px;
         padding-top: 20px;
         color: #223F47;
         font-family: 'Roboto', italic;
         font-size: 40px;
-        margin-bottom: 80px;
+        margin-bottom: 200px;
         background-color: #B7B9C0;
     }
 }
