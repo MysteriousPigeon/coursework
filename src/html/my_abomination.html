@@ -23,4 +23,31 @@
         </div>
     </body>
 
+    <script>
+        // Функция для получения данных с сервера
+        function fetchAbominations() {
+            fetch('/get-abominations')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('abominationContainer');
+                    container.innerHTML = '';  // Очистка контейнера
+
+                    data.forEach(item => {
+                        const div = document.createElement('div');
+                        div.classList.add('abomination__item');
+                        div.innerHTML = `
+                            <h3>${item.title}</h3>
+                            <p>${item.description}</p>
+                        `;
+                        container.appendChild(div);
+                    });
+                })
+                .catch(error => console.error('Ошибка:', error));
+        }
+
+        // Вызов функции при загрузке страницы
+        document.addEventListener('DOMContentLoaded', fetchAbominations);
+    </script>
+
+
 </html>

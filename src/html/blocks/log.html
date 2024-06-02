@@ -16,4 +16,26 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            var login = document.getElementById('login').value;
+            var password = document.getElementById('password').value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "/send-data", true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log(xhr.responseText);
+                    window.location.href = 'feed.html';  // Переход на другую страницу после успешной отправки данных
+                }
+            };
+            var data = JSON.stringify({login: login, password: password});
+            xhr.send(data);
+        });
+    </script>
+
 </body>

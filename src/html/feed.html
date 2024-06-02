@@ -9,7 +9,7 @@
                 <a href="feed.html" class="page-header__nav-link feed">Feed</a>
                 <a href="my_abomination.html" class="page-header__nav-link abomin">Мои заметки</a>
                 <a href="create.html" class="page-header__nav-link comment">Создать заметку</a>
-                <a href="index.html" class="page-header__nav-link log">Выйти</a>
+                <a href="index.html" class="page-header__nav-link exit">Выйти</a>
             </nav>
         </div>
     </header>
@@ -19,5 +19,24 @@
             <div class="abomination__container" id="abomination__container"></div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('logoutLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            fetch('/logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    window.location.href = 'index.html';
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

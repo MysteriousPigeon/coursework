@@ -88,5 +88,37 @@
             </div>
         </div>
 
+        <script>
+            document.getElementById('createForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                var formData = new FormData(this);
+                var data = {};
+                formData.forEach((value, key) => data[key] = value);
+                data.private = formData.has('private');  // Convert checkbox value to boolean
+                
+                fetch('/create-abomination', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        window.location.href = 'my_abomination.html';
+                    } else {
+                        alert('Ошибка при создании записи');
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                    alert('Ошибка при создании записи');
+                });
+            });
+        </script>
+
+
 </html>
 </body>
