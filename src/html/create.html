@@ -19,6 +19,8 @@
 
 
             <div class="create__container">
+
+                <form action="{{ url_for('  ') }}" method="post" class="create__list">
                 <div class="create__list">
                     
                     <div class="create__field name">
@@ -26,6 +28,7 @@
                             <input type="text" class="field__input"  name="name"  placeholder="Name" />
                         </label>
                     </div>
+
                     <div class="create__field name">
                         <label class="create__title">
                             <input type="text" class="field__input"  name="gender" placeholder="Gender" required />
@@ -81,43 +84,15 @@
                         <span class="check__label">Private</span>
                         <input type="checkbox" class="check__input" name="private" />
                         <span class="check__mark"></span>
-                        <a href="my_abomination.html" class="create__submit">Создать</a>
                     </label>
-
+                    <input type="submit" class="create__submit" value="Создать">
+                    
+                </form>
                 </div>
             </div>
         </div>
 
-        <script>
-            document.getElementById('createForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                
-                var formData = new FormData(this);
-                var data = {};
-                formData.forEach((value, key) => data[key] = value);
-                data.private = formData.has('private');  // Convert checkbox value to boolean
-                
-                fetch('/create-abomination', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.json())
-                .then(result => {
-                    if (result.success) {
-                        window.location.href = 'my_abomination.html';
-                    } else {
-                        alert('Ошибка при создании записи');
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    alert('Ошибка при создании записи');
-                });
-            });
-        </script>
+
 
 
 </html>

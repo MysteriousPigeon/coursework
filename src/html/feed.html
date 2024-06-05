@@ -20,23 +20,7 @@
         </div>
     </div>
 
-    <script>
-        document.getElementById('logoutLink').addEventListener('click', function(event) {
-            event.preventDefault();
-            fetch('/logout', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(result => {
-                if (result.success) {
-                    window.location.href = 'index.html';
-                }
-            });
-        });
-    </script>
+
 
 </body>
 </html>

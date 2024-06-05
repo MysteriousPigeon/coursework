@@ -3,45 +3,23 @@
         <div class="reg__wrapper">
             <div class="reg__form">
                 <div class="form__section">
-                    <div class="form__list">
-                        <label class="form__field field">
-                            <input type="text" class="field__input" placeholder="login" name="login" required/>
-                        </label>
-                        <label class="form__field field">
-                            <input type="text" class="field__input" placeholder="password" name="password" required/>
-                        </label>
-                        <a href="feed.html" class="field__submit">Подтвердить</a>
-                    </div>
+                    
+                    <form action="{{url_for('') }}" method="post">
+                        <div class="form__list">
+                            <label class="form__field field">
+                                <input type="text" class="field__input" placeholder="login" name="login" required/>
+                            </label>
+                            <label class="form__field field">
+                                <input type="text" class="field__input" placeholder="password" name="password" required/>
+                            </label>
+                            <input type="submit" class="field__submit" value="Подтвердить">
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <script>
-        document.getElementById('submit').addEventListener('click', function(event) {
-            event.preventDefault();
-            
-            var login = document.getElementById('login').value;
-            var password = document.getElementById('password').value;
-            
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "/login", true);
-            xhr.setRequestHeader('Content-Type', 'application/json');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        var response = JSON.parse(xhr.responseText);
-                        if (response.success) {
-                            window.location.href = 'feed.html';
-                        } else {
-                            document.getElementById('error-message').style.display = 'block';
-                        }
-                    }
-                }
-            };
-            var data = JSON.stringify({login: login, password: password});
-            xhr.send(data);
-        });
-    </script>
 
 </body>
